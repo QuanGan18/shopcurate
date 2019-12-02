@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Poppins:300,400,700,900');
+
+
+* {
+    box-sizing: border-box;
+    transition: all ease-in-out 250ms;
+}
+
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    background:black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 95%;
+    max-width: 70em;
+    margin: 0 auto;
+}
+
+.clearfix::after,
+section::after,
+footer::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* header
+=================== */
+
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: .5em;
+}
+
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 1em;
+}
+
+nav a {
+    font-weight: 900;
+    text-decoration: none;
+    padding: .5em;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1rem;
+}
+
+nav a:hover,
+nav a:focus {
+    color: orange;
+}
+
+
+@media (min-width:30rem) {
+    .logo {
+        position: absolute;
+        top: 0px;
+        left: 30px;
+        height:150px;
+        width:150px;
+        
+    }
+
+    nav {
+        position: absolute;
+        top: 33px;
+        right: 20px;
+        
+    }
+}
+
+.banner {
+    padding: 80px;
+    text-align: center;
+    background: black;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content-section {
+    margin: 3em;
+    background: black;
+}
+
+.section-header {
+    font-family: "Poppins";
+    font-weight: bolder;
+    color: white;
+    text-align: left;
+    margin-left:70px;
+    font-size: 2.5em;
+}
+
+
+/* Footer
+=================== */
+
+footer {
+    background: #232323;
+    color: #fff;
+    text-align: left;
+    padding: 2em 0;
+    font-family:"Poppins";
+}
+
+
+/* CTA
+=================== */
+
+.cta {
+    background-color: #66ff99;
+    padding: 5em 0;
+}
+
+
+/* typography
+=================== */
+
+
+p {
+    margin-top: 0;
+    line-height: 3;
+    text-align:left;
+    margin-left:40px;
+    margin-right:20px;
+    font-family:Poppins;
+}
+
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+.unstyled-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color:orange;
+}
+
+/* Column system
+=================== */
+
+[class^=col-] {
+    width: 80%;
+    margin-top: 1em;
+}
+
+[class^=col-]:first-child {
+    margin-top: 0;
+}
+
+.col-1 {
+    width: 33.333334%;
+    float: left;
+}
+
+
+@media (min-width: 40rem) {
+
+    [class^=col-] {
+        float: left;
+        padding: 0 .5em;
+        margin-top: 0;
+    }
+
+    [class^=col-]:first-child {
+        padding-left: 0;
+    }
+
+    [class^=col-]:last-child {
+        padding-right: 0;
+    }
+
+    .col-3 {
+        width: 40%;
+    }
+
+    .col-1 {
+        width: 20%;
+    }
+}
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+}
+
+.btn-header {
+    margin: .5em 15% 2em 15%;
+    color: white;
+    border: 2px solid #2D9CDB;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 0;
+    font-size: 1.5em;
+    font-weight: lighter;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.btn-header:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.btn-play {
+    display: block;
+    margin: 0 auto;
+    color: #2D9CDB;
+    font-size: 4em;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    text-align: center;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #1d241e;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-checkout {
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-checkout:hover {
+    color: white;
+    background-color: #243b2a;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #243b2a;
+}
+
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.shop-item-image {
+    height: 250px;
+}
+
+.shop-item-image:hover {
+  transform: scale(1.6);
+  transform-origin: 50% 50%;
+}
+
+.shop-item-details {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: white;
+}
+
+.original-price {
+        font-family:'Oswald', sans-serif;
+        text-decoration:line-through;
+        flex-grow:1;
+        color:white;
+        padding:20px;
+    }
+
+.shop-item-size {
+    flex-grow: 1;
+    color: white;
+
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: white;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    margin-left:75px;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: white;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: white;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: white;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1em;
+}

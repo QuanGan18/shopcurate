@@ -1,0 +1,13 @@
+{
+	"details": [{
+	 "firstname": "Matthew",
+	 "lastname": "Lee",
+	 "email": "matthewleegen@gmail.com",
+	 "password": "lalalalala"
+	},{
+	 "firstname": "Don",
+	 "lastname": "Lee",
+	 "email": "donlee@gmail.com",
+	 "password": "lalaladlala"
+	}]
+}

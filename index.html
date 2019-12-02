@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CURATE: LOGIN/REGISTER</title>
+        <link rel="stylesheet" href="loginregister.css">
+    </head>
+
+    <style>
+div.p {
+    	text-align: left;
+    	margin-left: 30px;
+    	color:black;
+    	font-family:"Poppins";
+    	font-size: 45px;
+	}
+
+	div.p a{
+  		color: black;
+  		text-decoration: none;
+  	}
+
+	</style>
+    <header>
+  <div class="logo"><a href="homepage.html"><img src="logo.png" alt="Curate logo" class="logo"></a>
+  
+  </div>
+</header>
+    <body>
+
+        <div class="login-page">
+            <div class="form">
+                <form class="register-form">
+                    <input type="text" placeholder="First Name" id="firstname" required>
+                    <input type="text" placeholder="Last Name" id="lastname" required>
+                    <input type="email" placeholder="Email" id="email" required>
+                    <input type="password" placeholder="Password" id="password" required maxlength="30">
+                    <button type="submit" onclick="send()">Create Account</button>
+                    <p class="message">Already Registered? <a href="#">Login</a></p>
+                </form>
+                
+                <form class="login-form">
+                    <input type="text" placeholder="Username" required maxlength="30">
+                    <input type="password" placeholder="Password" required maxlength="30">
+                    <button>Login</button>
+                    <p class="message">Not Registered? <a href="#">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        
+        <script>
+            $('.message a').click(function(){
+                $('form').animate({height: "toggle", opacity: "toggle"}, "slow")                          
+            })
+        </script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyDmkMdrD3kvUPDq7cvCrkD6sm74qtMsRzo",
+            authDomain: "bus4-118w-3ecf1.firebaseapp.com",
+            databaseURL: "https://bus4-118w-3ecf1.firebaseio.com",
+            projectId: "bus4-118w-3ecf1",
+            storageBucket: "bus4-118w-3ecf1.appspot.com",
+            messagingSenderId: "721604577057",
+            appId: "1:721604577057:web:c4e69154351e8f8b3aa060",
+            measurementId: "G-RFHZDD3LKZ"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script>
+        <script src="index.js" async></script>
+  </body>
+</html>
