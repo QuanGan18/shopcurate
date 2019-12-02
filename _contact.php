@@ -1,12 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Recaptcha Demo</title>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-</head>
-<body> 
-
 <?php
 // Checks if form has been submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -63,6 +54,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 
 <?php } ?>
-
-</body>
-</html>
