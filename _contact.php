@@ -1,6 +1,4 @@
 <?php
-// Checks if form has been submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     function post_captcha($user_response) {
         $fields_string = '';
         $fields = array(
@@ -32,25 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // If CAPTCHA is successfully completed...
 
-        // Paste mail function or whatever else you want to happen here!
-        echo '<br><p>CAPTCHA was completed successfully!</p><br>';
+        $senderEmail="sender@gmail.com";
+        $recipient="recipient@gmail.com";
+        $subject=$_POST["subject"];
+        $headers="From: Feedback <$senderEmail>";
+
+        $body=$_POST["messagefeed"];
+
+        mail($recipient,$subject,$body,$headers);
+
+        echo 'Your message has been sent!<br><br>';
     }
-} else { ?>
-    
-    <!-- FORM GOES HERE -->
-    <form action="recaptcha-v2.php" method="post">
-        <label for="fname">First Name*</label><br>
-        <input type="text" name="fname" id="fname" required autofocus><br><br>
-
-        <label for="lname">Last Name*</label><br>
-        <input type="text" name="lname" id="lname" required><br><br>
-
-        <label for="email">Email Address*</label><br>
-        <input type="email" name="email" id="email" required><br><br>
-
-        <div class="g-recaptcha" data-sitekey="_______________PUBLIC_KEY_______________"></div>
-        <br>
-        <input type="submit" id="submit" value="Submit">
-    </form>
-
-<?php } ?>
+?>
