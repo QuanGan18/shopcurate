@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
+	<head>
 	<title>Contact US</title>
 	<style type="text/css" media="screen">
 		body {
@@ -64,7 +63,7 @@
 			border-right: 15px #040404;
 			border-left: 15px #040404;
 		}
-		.sub-btn{
+		.submitbtn{
 			width: 100%;
 			padding: 10px;
 			border-radius: 5px;
@@ -76,35 +75,68 @@
 			font-size: 20px;
 			text-shadow: 1px 1px 1px #444;
 		}
-		.sub-btn:hover{
+		.submitbtn:hover{
 			background: linear-gradient(black,#929191);
 			opacity: 0.8;
 			transition: all ease-out 0.2s;
-		}
-		.sub-btn:focus{
-			outline: none;
-		}
+		}		
 		@media(max-width: 720px){
 			.main{
 				width: 90%;
 			}
 		}
+		.logo {
+        position: absolute;
+        top: 0px;
+        left: 30px;
+        height:150px;
+        width:150px;
+        
+    	}
     </style>
+     <header>
+  <div class="logo"><a href="index.html"><img src="logo.png" alt="Curate logo" class="logo"></a>
+  
+  </div>
+</header>
 </head>
 	<body>
 		<div class="main">
 			<div class="info">Give Your Feedback!</div>
-			<form action="thankyou.html" method="post" name="form" class="form-box">
-				<label for="name">Name</label><br>
-				<input type="text" name="name" class="inp" placeholder="Enter Your Name" required><br>
-				<label for="email">Email ID</label><br>
-				<input type="email" name="email" class="inp" placeholder="Enter Your Email" required><br>
-				<label for="phone">Phone</label><br>
-				<input type="tel" name="phone" class="inp" placeholder="Enter Your Phone" required><br>
-				<label for="message">Message</label><br>
-				<textarea name="msg" class="msg-box" placeholder="Enter Your Message Here..." required></textarea><br>
-				<input type="submit" name="submit" value="Send" class="sub-btn">
+			<form class="form-box">
+			<label>Name</label>
+			<input type="text" class="inp" placeholder="Enter Your Name" id="name" required>
+			<label>Email ID</label>
+			<input type="email" class="inp" placeholder="Enter Your Email" id="email" required><br>
+			<label>Phone</label>
+			<input type="tel" class="inp" placeholder="Enter Your Phone" id="phone" required><br>
+			<label>Message</label>
+			<textarea class="msg-box" placeholder="Enter Your Message Here..." id="msg" required></textarea><br>
+			<button type="submit" onclick="send(); 
+			window.location.href='thankyou.html'" class="submitbtn">Send</button>
 			</form>
 		</div>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+        
+
+		<script>
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+		    apiKey: "AIzaSyAV66_0bCC1uLEoUudqY1hBOoKJ3TzXy50",
+		    authDomain: "bus4-118w-contactus.firebaseapp.com",
+		    databaseURL: "https://bus4-118w-contactus.firebaseio.com",
+		    projectId: "bus4-118w-contactus",
+		    storageBucket: "bus4-118w-contactus.appspot.com",
+		    messagingSenderId: "274659770662",
+		    appId: "1:274659770662:web:e41b89099302ec1afdc1e7",
+		    measurementId: "G-4E9LFNMC2T"
+		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);	
+		</script>
+		<script src="contactus.js" async=""></script>
 	</body>
 </html>

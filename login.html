@@ -34,7 +34,7 @@ div.p {
                     <input type="text" placeholder="Last Name" id="lastname" required>
                     <input type="email" placeholder="Email" id="email" required>
                     <input type="password" placeholder="Password" id="password" required maxlength="30">
-                    <button type="submit" onclick="send()">Create Account</button>
+                    <button type="submit" onclick="send(); window.location.href='thankyouregister.html'">Create Account</button>
                     <p class="message">Already Registered? <a href="#">Login</a></p>
                 </form>
                 
@@ -54,6 +54,7 @@ div.p {
                 $('form').animate({height: "toggle", opacity: "toggle"}, "slow")                          
             })
         </script>
+        
 
         <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>

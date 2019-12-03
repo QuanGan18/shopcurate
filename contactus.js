@@ -4,16 +4,15 @@ detailsRef.on("child_added", function(snapshot, prevChildKey) {
 var newPost = snapshot.val();
 });
 
-function send(){
-var firstname = document.getElementById("firstname").value;
-var lastname = document.getElementById("lastname").value;
+function sendme(){
+var name = document.getElementById("name").value;
 var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
+var phone = document.getElementById("phone").value;
+var message = document.getElementById("msg").value;	
 detailsRef.push().set({
-	firstname: firstname,
-	lastname: lastname,
+	name: name,
 	email: email,
-	password: password,
+	phone number: phone,
+	message: message,
 	});
 }
-
