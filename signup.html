@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>User Login</title>
+  <title>CURATE: User Sign Up</title>
   <link href='styles/userauth.css' type='text/css' rel='stylesheet'>
 
   <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
@@ -19,13 +19,13 @@
     <div class='help link'><a href=help.html>Help/FAQ</a></div>
   </div>
 
-  <div class='login-form'>
+  <div class='signup-form'>
     <input id='email' type='email' placeholder='Email'><br />
     <input id='password' type='password' placeholder='Password'><br />
 
-    <button id='login'>Log In</button><br />
+    <button id='signup'>Sign Up</button><br />
 
-    <p class='switch'>Don't have an account? <a href='signup.html'>Sign up here!</a></p>
+    <p class='switch'>Already have an account? <a href='login.html'>Log in here!</a></p>
   </div>
 
   <script>
@@ -42,6 +42,6 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   </script>
-  <script src="js/login.js"></script>
+  <script src="js/signup.js"></script>
 </body>
 </html>

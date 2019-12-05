@@ -1,142 +1,85 @@
-<!DOCTYPE html>
 <html>
-	<head>
-	<title>Contact US</title>
-	<style type="text/css" media="screen">
-		body {
-		    margin: 0;
-		    font-family:sans-serif;
-		    color: white;
-		    text-align: left;
-		    background:black;
-		}
-		*{
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: sans-serif;
-		}
-		.main{
-			width: 500px;
-			margin: 50px auto;
-			margin-top: 200px;
-			border-radius: 10px;
-			border: 5px solid #241F1F;
-			border-left: 40px solid #241F1F;
-			box-shadow: 1px 2px 10px #555;
-		}
-		.info{
-			width: 100%;
-			background-color: #241F1F;
-			padding: 7px;
-			text-shadow: 1px 1px 1px #222;
-			color: #fff;
-			font-size: 20px;
-		}
-		.form-box{
-			padding: 20px;
-			background-color: #eee;
-		}
-		label{
-			color: #241F1F;
-			font-size: 18px;
-		}
-		.inp,.msg-box{
-			width: 100%;
-			padding: 10px;
-			margin-top: 4px;
-			margin-bottom: 5px;
-			border-radius: 5px;
-			border: 2px solid #241F1F;
-			font-weight: bold;
-			color: #241F1F;
-			border-right: 15px solid #241F1F;
-			border-left: 15px solid #241F1F;
-			resize: none;
-		}
-		.msg-box{
-			height: 80px;
-		}
-		.inp:focus,.msg-box:focus{
-			outline: none;
-			border: 2px #040404;
-			border-right: 15px #040404;
-			border-left: 15px #040404;
-		}
-		.submitbtn{
-			width: 100%;
-			padding: 10px;
-			border-radius: 5px;
-			margin-top: 5px;
-			border: none;
-			background: linear-gradient(black,#929191);
-			cursor: pointer;
-			color: white;
-			font-size: 20px;
-			text-shadow: 1px 1px 1px #444;
-		}
-		.submitbtn:hover{
-			background: linear-gradient(black,#929191);
-			opacity: 0.8;
-			transition: all ease-out 0.2s;
-		}		
-		@media(max-width: 720px){
-			.main{
-				width: 90%;
-			}
-		}
-		.logo {
-        position: absolute;
-        top: 0px;
-        left: 30px;
-        height:150px;
-        width:150px;
-        
-    	}
-    </style>
-     <header>
-  <div class="logo"><a href="index.html"><img src="logo.png" alt="Curate logo" class="logo"></a>
-  
-  </div>
-</header>
-</head>
-	<body>
-		<div class="main">
-			<div class="info">Give Your Feedback!</div>
-			<form class="form-box">
-			<label>Name</label>
-			<input type="text" class="inp" placeholder="Enter Your Name" id="name" required>
-			<label>Email ID</label>
-			<input type="email" class="inp" placeholder="Enter Your Email" id="email" required><br>
-			<label>Phone</label>
-			<input type="tel" class="inp" placeholder="Enter Your Phone" id="phone" required><br>
-			<label>Message</label>
-			<textarea class="msg-box" placeholder="Enter Your Message Here..." id="msg" required></textarea><br>
-			<button type="submit" onclick="send(); 
-			window.location.href='thankyou.html'" class="submitbtn">Send</button>
-			</form>
-		</div>
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
-        
+<head>
+  <title>Contact Us</title>
+  <link href='styles/aboutus.css' type='text/css' rel='stylesheet'>
 
-		<script>
-		  // Your web app's Firebase configuration
-		  var firebaseConfig = {
-		    apiKey: "AIzaSyAV66_0bCC1uLEoUudqY1hBOoKJ3TzXy50",
-		    authDomain: "bus4-118w-contactus.firebaseapp.com",
-		    databaseURL: "https://bus4-118w-contactus.firebaseio.com",
-		    projectId: "bus4-118w-contactus",
-		    storageBucket: "bus4-118w-contactus.appspot.com",
-		    messagingSenderId: "274659770662",
-		    appId: "1:274659770662:web:e41b89099302ec1afdc1e7",
-		    measurementId: "G-4E9LFNMC2T"
-		  };
-		  // Initialize Firebase
-		  firebase.initializeApp(firebaseConfig);	
-		</script>
-		<script src="contactus.js" async=""></script>
-	</body>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class='menu'>
+      <div class='homepage link'><a href=home.html>CURATE</a></div>
+      <div class='login link'><a href=signup.html>Login/Register</a></div>
+      <div class='story link'><a href=aboutus.html>Our Story</a></div>
+      <div class='help link'><a href=help.html>Help/FAQ</a></div>
+    </div>
+
+  <form id='details_div' class='main-div' style='display:block'>
+    <h3>Submit A Request/Leave A Feedback</h3><br />
+    <input type='text' placeholder='Name' id='name' required='true'/><br />
+    <input type='text' placeholder='Email' id='email' required='true' /><br />
+    <input type='text' placeholder='Phone Number' id='phone' required='true' /><br />
+    <input type='text' placeholder='Message' id='msg' required='true' /><br />
+    <button type='submit' onclick='send()' >Send</button>
+  </form>
+
+  <footer>
+  	<div class="container">
+  		<div class="col-3">
+  			<p>Curated for Kings from San Jose, CA.</p>
+  		</div>
+
+  		<div class="col-1">
+  			<ul class="unstyled-list">
+  				<li><strong>MORE FROM CURATE</strong></li>
+  				<li><a href="home.html">HOME</a></li>
+  				<li><a href="aboutus.html">OUR STORY</a></li>
+  				<li><a href="store.html">SHOP NOW</a></li>
+  				<li><a href="sales.html">SALES</a></li>
+  				<li><a href="newarrivals.html">NEW ARRIVALS</a></li>
+
+  			</ul>
+  		</div>
+
+  		<div class="col-1">
+  			<ul class="unstyled-list">
+  				<li><strong>CONTACT US</strong></li>
+  				<li>888 Curate Drive  </li>
+  				<li>CA, 95123 </li>
+  				<li>(408) 777-8888  </li>
+  				<li>info@curate.com </li>
+  			</ul>
+  		</div>
+
+  		<div class="col-1">
+  			<ul class="unstyled-list">
+  				<li><strong>CONNECT WITH US</strong></li>
+  				<li><a href="https://facebook.com/">Facebook</a></li>
+                  <li><a href="https://twitter.com/">Twitter</a></li>
+                  <li><a href="https://instagram.com/">Instagram</a></li>
+                  <li><a href="contactus.html">Contact Us</a></li>
+  			</ul>
+  		</div>
+  	</div>
+  </footer>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAJ2hTq8n8F1E1pezCCGhmp1b1uBogfBjI",
+    authDomain: "contactus-e0532.firebaseapp.com",
+    databaseURL: "https://contactus-e0532.firebaseio.com",
+    projectId: "contactus-e0532",
+    storageBucket: "contactus-e0532.appspot.com",
+    messagingSenderId: "318347945583",
+    appId: "1:318347945583:web:81438107435db05b09cf9a"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+  <script src="js/contactus.js"></script>
+</body>
 </html>
